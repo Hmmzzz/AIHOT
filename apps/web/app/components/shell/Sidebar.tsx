@@ -9,7 +9,7 @@ import { activeSidebarItem, rail, railIsActive, sidebar, type NavItem } from "./
 import { useScreen } from "./screens";
 import { ThemeSwitch } from "./ThemeSwitch";
 import { Filings } from "./Filings";
-import { IconGithub } from "../icons";
+import { IconGear, IconGithub } from "../icons";
 
 /** True while the changelog has an entry newer than the one this reader last opened. */
 export function useChangelogDot(latestVersion: string | null): boolean {
@@ -110,6 +110,11 @@ export function Sidebar({ changelogVersion }: { changelogVersion: string | null 
           })}
         </nav>
         <div className="mt-2 space-y-2.5 px-1 pt-1">
+          <SideLink
+            item={{ to: "/admin", label: "后台", icon: IconGear }}
+            dot={false}
+            active={false}
+          />
           {SITE.github && (
             <a
               href={SITE.github}
