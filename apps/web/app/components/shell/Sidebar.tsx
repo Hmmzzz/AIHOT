@@ -110,11 +110,15 @@ export function Sidebar({ changelogVersion }: { changelogVersion: string | null 
           })}
         </nav>
         <div className="mt-2 space-y-2.5 px-1 pt-1">
-          <SideLink
-            item={{ to: "/admin", label: "后台", icon: IconGear }}
-            dot={false}
-            active={false}
-          />
+          <a
+            href="/admin"
+            className="flex h-10 items-center gap-2.5 rounded-control px-2.5 text-[14px] font-medium text-ink-3 transition-colors duration-150 hover:bg-bg-sunk hover:text-ink touch:h-11"
+          >
+            <span className="flex w-[22px] shrink-0 justify-center">
+              <IconGear size={17} />
+            </span>
+            <span className="min-w-0 truncate">后台</span>
+          </a>
           {SITE.github && (
             <a
               href={SITE.github}
